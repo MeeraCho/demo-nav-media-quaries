@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* header밖 container에서 header안 컨테이너로 바꿔서 배경색은 header로 화면 끝까지 나오는데 컨텐츠는 어느 순간 확장이 안되게 한다 */
+.inner-container {
+    max-width: 64rem;
+    margin: 0 auto;
+}
+
+header {
+    background-color: aquamarine;
+    text-align: center;
+} 
+
+header a {
+    color: #34445e;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+.menu-links li {
+    line-height: 2.25rem;
+}
+
+.menu-links a {
+    /* fill out all the width and height of the element that they're sitting in  */
+    /* 엄지 손가락 사이즈에 맡게 a 크기를 키워준다 */
+    display: block;
+}
+
+/* active 모바일에서 뭔가 클릭하면 보여짐  */
+.menu-links a:hover,
+.menu-links a:active {
+    color: #178daa;
+}
+
+main {
+    padding: 1rem;
+}
+
+section {
+    margin-bottom: 1.5rem;
+}
+
+/* media rule, not/only, mediatype and (media feature/ condition){...} */
+/* header에서 .inner-container로 바꿔 flex 넣는 이유는 header는 egde to edge로 background color로 컨텐츠는 (week3-1 52분) */
+@media screen and (min-width: 840px){
+    .menu-links {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .inner-container {
+        padding: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+/* padding nav와 main 맞추기  */
+@media screen and (min-width: 940px) {
+    main {
+        display: flex;
+        gap: 2%;
+        max-width: 64rem;
+        margin: 0 auto;
+        padding: 1rem 0.5rem;
+    }
+
+    section {
+        width: calc(96%/3);
+    }
+}
